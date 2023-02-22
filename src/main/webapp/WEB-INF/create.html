@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:object="${employeeList}" >
+    Name: <input th:field="*{name}"><br>
+    Address <input th:field="*{address}"><br>
+    <select th:field="*{branchModel}">
+        <option th:each="b : ${branchList}" th:text="${b.getName()}" th:value="${b.getId()}"></option>
+    </select>
+    <input type="submit">
+</form>
+</body>
+</html>

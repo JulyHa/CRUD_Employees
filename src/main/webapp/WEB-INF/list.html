@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/employees/create}">Create</a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Branch</th>
+    </tr>
+    <tr th:each=" e: ${lists} ">
+        <td th:text="${e.id}" ></td>
+        <td th:text="${e.name}" ></td>
+        <td th:text="${e.address}" ></td>
+        <td th:text="${e.branchModel.name}" ></td>
+    </tr>
+</table>
+
+
+</body>
+</html>
